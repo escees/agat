@@ -8,7 +8,7 @@
     <title>Material Design Bootstrap</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="{{ asset('build/css/bootstrap.css') }}" rel="stylesheet">
-    <link href="{{ asset('/build/css/mdb.css') }}" rel="stylesheet">
+    <link href="{{ asset('build/css/mdb.css') }}" rel="stylesheet">
     <link href="{{ asset('build/css/style.css') }}" rel="stylesheet">
     <style type="text/css">
 
@@ -146,14 +146,17 @@
                   <strong>AGAT</strong>
                 </p>
 
-                <button
-                        type="button"
-                        class="btn btn-lg btn-danger"
-                        data-toggle="popover"
-                        title="Popover title"
-                        data-content="And here's some amazing content. It's very engaging. Right?">
-                  Click to toggle popover
-                </button>
+                <p id="colored-button" class="text-center">
+                  <a class="btn btn-danger float-buttons" data-toggle="popover"
+                     title="Popover title"
+                     data-content="And here's some amazing content. It's very engaging. Right?">Button A</a>
+                  <button class="btn btn-warning float-button-light" data-toggle="popover"
+                          title="Popover title"
+                          data-content="And here's some amazing content. It's very engaging. Right?">Button B</button>
+                  <input class="btn btn-info float-buttons" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?"
+                         type="submit" value="Button C">
+                </p>
+
               </div>
               <!-- Content -->
 
@@ -745,8 +748,6 @@
   </footer>
   <!--/.Footer-->
 
-    <!-- SCRIPTS -->
-    <!-- JQuery -->
     <script type="text/javascript" src="/build/js/jquery.js"></script>
     <script type="text/javascript" src="/build/js/popper.js"></script>
     <script type="text/javascript" src="/build/js/bootstrap.js"></script>
