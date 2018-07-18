@@ -1,13 +1,19 @@
 # See https://github.com/docker-library/php/blob/master/7.1/fpm/Dockerfile
-FROM php:7.1-fpm
+FROM php:7.2-fpm
 ARG TIMEZONE
 
 MAINTAINER Maxence POUTORD <maxence.poutord@gmail.com>
 
 RUN apt-get update && apt-get install -y \
+    apt-transport-https \
+    wget \
     openssl \
     git \
-    unzip
+    unzip \
+    gnupg
+
+RUN wget https://deb.nodesource.com/setup_10.x && chmod 777 setup_10.x && ./setup_10.x && apt-get install -y nodejs
+RUN npm install -g yarn
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
